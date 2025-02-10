@@ -12,17 +12,18 @@
 import java.util.Scanner;
 
 public class Staircase {
-	
 	public static void main (String[] args) {
-		//Print program name
-		System.out.println("Staircase Volume Calculator");
+	//Print program name
+	System.out.println("Staircase Volume Calculator");
 		
-		//Get user input for steps in the staircase
-		Scanner input = new Scanner(System.in);
+	//Create a Scanner object to read input
+	Scanner input = new Scanner(System.in);
+
+	//Get user input for steps in the staircase	
         System.out.print("How many steps in the staircase? ");
         int step = input.nextInt();
 
-		//Get user input for the step width in cm
+	//Get user input for the step width in cm
         System.out.print("Enter step width in cm: ");
         double width = input.nextDouble();
         
@@ -35,9 +36,10 @@ public class Staircase {
         double run = input.nextDouble();
         
         //Calculate the volume of concrete necessary to build a staircase
-        int block = (step * (step + 1)) / 2;
-        double volume = block * width * rise * run;
-        int volumeRounded = (int) (Math.ceil(volume));
+        int blocks = (step * (step + 1)) / 2;
+        double blockVolume = width * rise * run;
+	double staircaseVolume = blocks * blockVolume;
+        int volumeRounded = (int) (Math.ceil(staircaseVolume));
         
         //Print the volume of concrete necessary to build a staircase
         System.out.printf("Total volume is %,d cubic centimeters.", 
